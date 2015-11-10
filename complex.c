@@ -6,20 +6,20 @@ typedef struct complex{
 }complex;
 
 complex mult2(complex a, complex b);
-/*complex square(complex a, complex b);*/
+complex square(complex a);
 complex add2(complex a, complex b);
 
 int main(){
-	complex a, b, out_mult2, out_add2;
+	complex a, b, out_mult2, out_square, out_add2;
 	printf("\nEnter real and imaginary parts of a: ");
 	scanf("%f%f", &a.x,&a.y);
 	printf("\nEnter real and imaginary parts of b: ");
 	scanf("%f%f", &b.x,&b.y);
 	out_mult2 = mult2(a,b);
+	out_square = square(a);
 	out_add2 = add2(a,b);
 	printf("\nmult2 (a+b): %f + %f *i",out_mult2.x, out_mult2.y);
-/*	printf("\nsquare (a): %f + %f *i",out_square_a.x, out_square_a.y);
-	printf("\nsquare (b): %f + %f *i",out_square_b.x, out_square_b.y);*/
+	printf("\nsquare (a): %f + %f *i",out_square.x, out_square.y);
 	printf("\nadd2 (a+b): %f + %f *i",out_add2.x, out_add2.y);
 	return 0;
 }
@@ -30,15 +30,19 @@ complex mult2(complex a, complex b){
 	out_mult2.y = (a.x*b.y)+(b.x*a.y);
 	return(out_mult2);
 }
-/*complex square(complex a)
-*/
+
+complex square(complex a){
+	complex out_square;
+	out_square.x = ((a.x*a.x) - (a.y*a.y));
+	out_square.y = (2*a.x*a.y);
+	return(out_square);
+}	
 
 complex add2(complex a, complex b){
 	complex out_add2;
 	out_add2.x = a.x + b.x;
 	out_add2.y = a.y + b.y;
 	return(out_add2);
-
 }
 /*
 complex mult2(struct complex a, struct complex b);
