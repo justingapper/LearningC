@@ -8,9 +8,10 @@ typedef struct complex{
 complex mult2(complex a, complex b);
 complex square(complex a);
 complex add2(complex a, complex b);
+complex juliamap(complex z, complex c);
 
 int main(){
-	complex a, b, out_mult2, out_square, out_add2;
+	complex a, b, z, c, out_mult2, out_square, out_add2, out_juliamap;
 	printf("\nEnter real and imaginary parts of a: ");
 	scanf("%f%f", &a.x,&a.y);
 	printf("\nEnter real and imaginary parts of b: ");
@@ -21,6 +22,12 @@ int main(){
 	printf("\nmult2 (a+b): %f + %f *i",out_mult2.x, out_mult2.y);
 	printf("\nsquare (a): %f + %f *i",out_square.x, out_square.y);
 	printf("\nadd2 (a+b): %f + %f *i",out_add2.x, out_add2.y);
+
+	printf("\nEnter real and imaginary parts of z: ");
+	scanf("%f%f", &z.x,&z.y);
+	printf("\nEnter real and imaginary parts of c: ");
+	scanf("%f%f", &c.x,&c.y);
+	printf("\njuliamap (z^2 + c): %f + %f *i",out_juliamap.x, out_juliamap.y);
 	return 0;
 }
 
@@ -44,7 +51,18 @@ complex add2(complex a, complex b){
 	out_add2.y = a.y + b.y;
 	return(out_add2);
 }
+
+complex juliamap(complex z, complex c){
+	complex out_juliamap;
+	out_juliamap = add2(square(z),c);
+	return(out_juliamap);
+}
+
+
 /*
+	juliamap_r = (((zr*zr)-(zi*zi))+c);
+	juliamap_i = (2*zr*zi);
+
 complex mult2(struct complex a, struct complex b);
 	struct complex out;
 	out.x
