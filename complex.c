@@ -9,9 +9,10 @@ complex mult2(complex a, complex b);
 complex square(complex a);
 complex add2(complex a, complex b);
 complex juliamap(complex z, complex c);
+complex juliamap_ch(complex z, complex c);
 
 int main(){
-	complex a, b, z, c, out_mult2, out_square, out_add2, out_juliamap;
+	complex a, b, z, c, out_mult2, out_square, out_add2, out_juliamap, out_juliamap_ch;
 	printf("\nEnter real and imaginary parts of a: ");
 	scanf("%f%f", &a.x,&a.y);
 	printf("\nEnter real and imaginary parts of b: ");
@@ -27,7 +28,10 @@ int main(){
 	scanf("%f%f", &z.x,&z.y);
 	printf("\nEnter real and imaginary parts of c: ");
 	scanf("%f%f", &c.x,&c.y);
+	out_juliamap = juliamap(z,c);
+	out_juliamap_ch = juliamap_ch(z,c);
 	printf("\njuliamap (z^2 + c): %f + %f *i",out_juliamap.x, out_juliamap.y);
+	printf("\njuliamap check: %f + %f *i",out_juliamap_ch.x, out_juliamap_ch.y);
 	return 0;
 }
 
@@ -58,8 +62,16 @@ complex juliamap(complex z, complex c){
 	return(out_juliamap);
 }
 
+complex juliamap_ch(complex z, complex c){
+	complex out_juliamap_ch;
+	out_juliamap_ch.x = (((z.x*z.x)-(z.y*z.y))+c.x);
+	out_juliamap_ch.y = ((2*z.x*z.y)+c.y);
+	return(out_juliamap_ch);
+}
+
 
 /*
+
 	juliamap_r = (((zr*zr)-(zi*zi))+c);
 	juliamap_i = (2*zr*zi);
 
