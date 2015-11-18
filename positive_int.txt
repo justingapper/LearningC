@@ -1,0 +1,4 @@
+Positive integers are represented by the following:
+2 is raised to a power starting with 0 at the rightmost position and incrementing by 1 for each position as you move to the left.  The resulting values are then added together to yield a result.
+01010011
+(0*2^7) + (1*2^6) + (0*2^5) + (1*2^4) + (0*2^3) + (0*2^2) + (1*2^1) + (1*2^0) = 83

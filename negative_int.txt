@@ -1,0 +1,2 @@
+Negative numbers are represented by taking the inverse of the positive value and adding 1.
+So, -2 would be represented as 11111110 while 2 would be 00000001 and 83 would be 01010011 while -83 would be 10101101.
