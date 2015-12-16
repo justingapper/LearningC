@@ -1,0 +1,4 @@
+...what has changed between the C and C++ versions of structs
+
+Defining new structs is different.  Typedef does not appear.
+Functions can be overloaded meaning they can utilize the same name.
