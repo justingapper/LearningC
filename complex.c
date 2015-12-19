@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include "complex.h"
 
-// Set a complex number
-//void set(complex *c, tyde a, tyde b){
-//  c->x=a;
-//  c->y=b;
-//}
-
-// Multiply two complex numbers
-
+// Multiply 2 complex numbers
 complex mult2(complex *a, complex *b){
 	complex out_mult2;
 	out_mult2.x = (a->x*b->x)-(a->y*b->y);
@@ -17,10 +10,6 @@ complex mult2(complex *a, complex *b){
 }
 
 // Square a complex number
-//complex square(complex *a){
-//  return mult2(a,a);
-//}
-
 complex square(complex *a){
 	complex out_square;
 	out_square.x = ((a->x*a->x) - (a->y*a->y));
@@ -28,14 +17,7 @@ complex square(complex *a){
 	return(out_square);
 }
 
-// Add two complex numbers
-//complex add2(complex *a, complex *b){
-//  complex z;
-//  z.x=(a->x)+(b->x);
-//  z.y=(a->y)+(b->y);
-//  return z;
-//}
-
+// add 2 complex numbers
 complex add2(complex *a, complex *b){
 	complex out_add2;
 	out_add2.x = a->x + b->x;
@@ -43,12 +25,7 @@ complex add2(complex *a, complex *b){
 	return(out_add2);
 }
 
-// Apply juliamap to two complex numbers
-//complex juliamap(complex *a, complex *b){
-//  complex c = square(a);
-//  return add2(&c,b);
-//}
-
+// Apply juliamap to complex numbers
 complex juliamap(complex *a, complex *b){
 	complex out_juliamap;
 	out_juliamap = square(a);
